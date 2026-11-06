@@ -2,18 +2,12 @@
 
 namespace Tests\Feature;
 
-// use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class ExampleTest extends TestCase
 {
-    /**
-     * A basic test example.
-     */
-    public function test_dashboard_is_available(): void
+    public function test_landing_page_is_public_and_has_auth_buttons(): void
     {
-        $response = $this->get('/');
-
-        $response->assertOk()->assertSee('Panel');
+        $this->get('/')->assertOk()->assertSee('Catalog Studio')->assertSee('Registrarse')->assertSee('Iniciar sesión');
     }
 }
